@@ -32,7 +32,8 @@ class Config(object):
 
     CLIENT_ID = "bfd199da-4447-492d-9655-c6bde89feaa1"
 
-    REDIRECT_PATH = "/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
+    # REDIRECT_PATH = "/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
+    REDIRECT_PATH = "https://localhost:5555/getAToken"
 
     # You can find the proper permission names from this document
     # https://docs.microsoft.com/en-us/graph/permissions-reference
