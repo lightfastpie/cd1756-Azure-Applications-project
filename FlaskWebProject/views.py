@@ -61,7 +61,7 @@ def post(id):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        app.logger.warning('Successful Login.')
+        #app.logger.warning('Successful Login.')
         return redirect(url_for('home'))
     form = LoginForm()
     if form.validate_on_submit():
@@ -95,6 +95,7 @@ def authorized():
         # Note: In a real app, we'd use the 'name' property from session["user"] below
         # Here, we'll use the admin username for anyone who is authenticated by MS
         user = User.query.filter_by(username="admin").first()
+        app.logger.warning('Successful Login.')
         login_user(user)
         _save_cache(cache)
     return redirect(url_for('home'))
